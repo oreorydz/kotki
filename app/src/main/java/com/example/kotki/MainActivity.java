@@ -1,13 +1,16 @@
 package com.example.kotki;
 
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 
 import androidx.activity.EdgeToEdge;
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         EditText ktoreZdj = findViewById(R.id.ktoryObraz);
         ImageView zdjecie = findViewById(R.id.imageView);
         Switch niebkieskieTlo = findViewById(R.id.tloNiebkieskie);
+        LinearLayout main = findViewById(R.id.main);
 
         ArrayList<Integer> zdjecia = new ArrayList<>();
 
@@ -89,6 +93,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {
 
+            }
+        });
+
+        niebkieskieTlo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    main.setBackgroundColor(Color.parseColor("#1565c0"));
+                }
+                else{
+                    main.setBackgroundColor(Color.parseColor("#00796B"));
+                }
             }
         });
     }
