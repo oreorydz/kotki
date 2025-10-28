@@ -2,6 +2,8 @@ package com.example.kotki;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -61,9 +63,32 @@ public class MainActivity extends AppCompatActivity {
                     wyswietlaneZdj--;
                     zdjecie.setImageResource(zdjecia.get(wyswietlaneZdj));
                 } else if (wyswietlaneZdj==0) {
-                    zdjecie.setImageResource(zdjecia.get(4));
-                    wyswietlaneZdj=4;
+                    zdjecie.setImageResource(zdjecia.get(3));
+                    wyswietlaneZdj=3;
                 }
+            }
+        });
+
+        ktoreZdj.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                try {
+                    zdjecie.setImageResource(zdjecia.get(Integer.parseInt(charSequence.toString())));
+                }
+                catch (Exception e){
+
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
     }
