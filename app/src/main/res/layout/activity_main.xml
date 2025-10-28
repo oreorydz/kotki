@@ -50,11 +50,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="ktory obraz wyswietlic?"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:id="@+id/ktoryObraz"/>
 
     </LinearLayout>
@@ -66,6 +68,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="tlo niebieskie?"/>
 
         <Switch
@@ -74,5 +77,13 @@
             android:id="@+id/tloNiebkieskie"/>
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="313dp"
+        android:text="Autor: Igor Rydz"
+        android:textColor="@color/black"
+        android:background="@color/jasny"/>
 
 </LinearLayout>
